@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}
+Покупатели
+{% endblock %}
+{% block style %}
+{% include "includes/inc-style.html" %}
+{% endblock %}
+{% block header %}
+{% include "includes/inc-header.html" %}
+{% endblock %}
+{% block sidebar%}
+{% include "includes/inc-sidebar.html" %}
+{% endblock %}
+{% block content %}
+<div id="content">
+    <div>
+        <li>
+            <a href="/create-shopuser/">Создать покупателя</a>
+        </li>
+        <li>
+            <a href="/add-shopuser/">Добавить покупателя на продукт</a>
+        </li>
+    </div>
+    <h1>Список покупателей</h1>
+    <div>
+
+        {% for item in objects_list %}
+        <li>
+            {{item.name}}
+            {% for product in item.courses %}
+            {{product.name}}
+            {% endfor %}
+        </li>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+{% block footer%}
+{% include "includes/inc-footer.html" %}
+{%endblock%}

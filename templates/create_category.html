@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}
+Создать категорию
+{% endblock %}
+{% block style %}
+{% include "includes/inc-style.html" %}
+{% endblock %}
+{% block header %}
+{% include "includes/inc-header.html" %}
+{% endblock %}
+{% block sidebar%}
+{% include "includes/inc-sidebar.html" %}
+{% endblock %}
+{% block content %}
+<div id="content">
+    <h1>Создание категории</h1>
+    <form method="post">
+        <input type="text" name="name" placeholder="Название">
+        <button type="submit">Сохранить и вернуться на главную</button>
+    </form>
+</div>
+{% endblock %}
+{% block footer%}
+{% include "includes/inc-footer.html" %}
+{%endblock%}

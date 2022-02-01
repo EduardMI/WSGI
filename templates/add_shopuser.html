@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}
+Добавить покупателя
+{% endblock %}
+{% block style %}
+{% include "includes/inc-style.html" %}
+{% endblock %}
+{% block header %}
+{% include "includes/inc-header.html" %}
+{% endblock %}
+{% block sidebar%}
+{% include "includes/inc-sidebar.html" %}
+{% endblock %}
+{% block content %}
+<div id="content">
+   <div>
+		<li>
+			<a href="/shopuser-list/">Список покупателей</a>
+		</li>
+		<li>
+			<a href="/create-shopuser/">Создать покупателя</a>
+		</li>
+	</div>
+    <h1>Добавление покупателя продукта</h1>
+    <form method="post">
+        <select size="3" name="product_name">
+            {% for item in products %}
+            <option value="{{item.name}}">{{item.name}}</option>
+            {% endfor %}
+        </select>
+        <select size="3" name="shopuser_name">
+            {% for item in shopusers %}
+            <option value="{{item.name}}">{{item.name}}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Записать</button>
+    </form>
+</div>
+{% endblock %}
+{% block footer%}
+{% include "includes/inc-footer.html" %}
+{%endblock%}

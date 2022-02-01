@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+Создать покупателя
+{% endblock %}
+{% block style %}
+{% include "includes/inc-style.html" %}
+{% endblock %}
+{% block header %}
+{% include "includes/inc-header.html" %}
+{% endblock %}
+{% block sidebar%}
+{% include "includes/inc-sidebar.html" %}
+{% endblock %}
+{% block content %}
+<div id="content">
+    <div>
+        <li>
+            <a href="/shopuser-list/">Список покупателей</a>
+        </li>
+    </div>
+    <div>
+        <h1>Создание покупателя</h1>
+        <form method="post">
+            <input type="text" name="name" placeholder="Имя">
+            <button type="submit">Сохранить</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% block footer%}
+{% include "includes/inc-footer.html" %}
+{%endblock%}

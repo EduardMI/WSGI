@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+Категории
+{% endblock %}
+{% block style %}
+{% include "includes/inc-style.html" %}
+{% endblock %}
+{% block header %}
+{% include "includes/inc-header.html" %}
+{% endblock %}
+{% block sidebar%}
+{% include "includes/inc-sidebar.html" %}
+{% endblock %}
+{% block content %}
+<div id="content">
+    <h1>Список категорий</h1>
+    <ul>
+        {% for item in objects_list %}
+        <li>
+            {{item.name}} <span>Количество продуктов: {{item.product_count()}}</span>
+        </li>
+        {% endfor %}
+    </ul>
+	<div>
+		<li><a href="/product-list/">Список продуктов</a></li>
+		<li><a href="/create-product/">Создать продукт</a></li>
+	</div>
+</div>
+{% endblock %}
+{% block footer%}
+{% include "includes/inc-footer.html" %}
+{%endblock%}

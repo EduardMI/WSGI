@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}
+Продукты
+{% endblock %}
+{% block style %}
+{% include "includes/inc-style.html" %}
+{% endblock %}
+{% block header %}
+{% include "includes/inc-header.html" %}
+{% endblock %}
+{% block sidebar%}
+{% include "includes/inc-sidebar.html" %}
+{% endblock %}
+{% block content %}
+<div id="content">
+    <a href="/create-product/?id={{id}}">Создать новый продукт</a>
+    <br>
+    <h1>Список продуктов для категории "{{name}}"</h1>
+    {% for item in objects_list %}
+    <li>
+        {{item.name}} <span><a href="/copy-product/?name={{item.name}}">скопировать</a></span>
+    </li>
+    {% endfor %}
+</div>
+{% endblock %}
+{% block footer%}
+{% include "includes/inc-footer.html" %}
+{%endblock%}

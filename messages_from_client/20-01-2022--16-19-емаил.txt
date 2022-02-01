@@ -1,0 +1,12 @@
+name:
+Эдд
+
+email:
+емаил
+
+enquiry:
+ыуаыуаыауыуаыуа
+
+contact_submitted:
+submit
+
